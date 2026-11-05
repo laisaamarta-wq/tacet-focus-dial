@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TACET — landing page
 
-## Getting Started
+**TACET One** is a fictional, screenless focus dial: twist the crown to start a session, the core glows under glass, and your notifications and team status go quiet until you're done. This repository is the complete marketing site for the concept brand, inspired by the interaction quality of oryzo.ai.
 
-First, run the development server:
+> TACET is a design concept. Products, prices, specifications and reviews are demonstration content; the footer says so on every page.
+
+## Brand at a glance
+
+| | |
+|---|---|
+| Name | TACET — the musical marking for "stay silent" |
+| Tagline | Turn the world down. |
+| Product | TACET One, a 92 mm aluminium, ceramic and glass focus dial |
+| Audience | Knowledge workers, designers, engineers and teams who do deep work |
+| Positioning | The anti-app: focus you don't have to open |
+| Palette | Mist `#D9DCD6`, Chalk `#F2F1EC`, Basalt `#1D2124`, Graphite `#4A5157`, Ink `#15191C`, Cobalt `#3047FF` (the light of the core) |
+| Type | Unbounded (display, light weights) + Onest (text) |
+| Logo | An open ring — the crown, with a gap where a session starts — around a cobalt core (`src/components/brand/Logo.tsx`) |
+
+## Stack
+
+Next.js 16 (App Router) · TypeScript · Tailwind CSS 4 · Motion · Three.js + React Three Fiber · Lenis · Zod
+
+## Run
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build && npm run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Node.js 20+.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Where things live
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| What | Where |
+|---|---|
+| All copy, pricing, FAQ, specs, legal text | `src/content/site.ts` |
+| Colours and type scale | `src/app/globals.css` |
+| Where the object lands in each section | `src/lib/stages.ts` |
+| The 3D product (procedural, three finishes) | `src/components/three/TacetModel.tsx` |
+| Scroll choreography of the object | `src/components/three/CoreObject.tsx` |
+| Product renders used in the gallery | `public/renders/*.webp` |
+| Sections | `src/components/sections/*` |
 
-## Learn More
+### How the 3D choreography works
 
-To learn more about Next.js, take a look at the following resources:
+Every section contains an empty "dock" box. Each frame, the object flies toward the dock of the current section and blends its pose, light and explode state with the next one. Layout decides where the object sits, so mobile works without separate animation code. The page colour also blends between light and dark chapters while you scroll.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Reservation form
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Mode | How |
+|---|---|
+| Built-in endpoint (default) | `POST /api/contact` validates, rate-limits and delivers via `RESEND_API_KEY` + `CONTACT_TO` (email) or `CONTACT_WEBHOOK_URL` (Make, Zapier, n8n…). Without these, submissions are logged. |
+| Any external service | Set `NEXT_PUBLIC_FORM_ENDPOINT` to a URL that accepts JSON POST (e.g. Formspree). |
+| Demo | `NEXT_PUBLIC_FORM_MODE=demo` sends nothing and shows a demo confirmation. The single-file HTML uses this. |
 
-## Deploy on Vercel
+Keep keys in your host's environment settings, never in code.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Vercel: import the repo, framework is detected automatically, add the form variables if you want real submissions. Then set `brand.url` in `src/content/site.ts` to your domain (used for canonical URL, sitemap and Open Graph image).
+
+## Single-file HTML
+
+`tacet.html` is a static export with every script, style, font and render inlined, so it opens offline by double-click and can be uploaded anywhere. Its form runs in demo mode unless it was built with `NEXT_PUBLIC_FORM_ENDPOINT`.
+
+## Checked
+
+Production build, TypeScript strict, ESLint. Screenshots at 1440×900 and 390×844. Form validation, honeypot and demo/endpoint modes. Respects `prefers-reduced-motion`, has a fallback without WebGL, keyboard-operable dial (arrow keys), visible focus and a skip link.
