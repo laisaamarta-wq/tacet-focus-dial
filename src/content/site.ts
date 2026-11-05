@@ -10,7 +10,7 @@ export const brand = {
   tagline: "Turn the world down.",
   description:
     "TACET One is a focus dial for your desk. One twist silences your phone, blocks your calendar and tells your team you're focused — for exactly as long as you choose. No screen. No app to open.",
-  url: "https://tacet.example",
+  url: "https://tacet-focus-dial.vercel.app",
   locale: "en_US",
   disclaimer:
     "TACET is a fictional brand created as a design concept. Products, prices, specifications and reviews on this page are for demonstration only. Nothing is for sale.",

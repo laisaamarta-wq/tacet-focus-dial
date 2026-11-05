@@ -59,7 +59,7 @@ Keep keys in your host's environment settings, never in code.
 
 ## Deploy
 
-Vercel: import the repo, framework is detected automatically, add the form variables if you want real submissions. Then set `brand.url` in `src/content/site.ts` to your domain (used for canonical URL, sitemap and Open Graph image).
+Vercel: import the repo, framework is detected automatically, add the form variables if you want real submissions. Live at https://tacet-focus-dial.vercel.app. If you add a custom domain, update `brand.url` in `src/content/site.ts` (used for canonical URL, sitemap and Open Graph image).
 
 ## Single-file HTML
 
