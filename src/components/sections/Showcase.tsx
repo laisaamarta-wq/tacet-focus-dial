@@ -1,7 +1,7 @@
-/* eslint-disable @next/next/no-img-element -- static renders, also used in the single-file HTML build */
 import { showcase } from "@/content/site";
 import { Dock } from "@/components/ui/primitives";
 import { SplitReveal } from "@/components/ui/SplitReveal";
+import { TiltFigure } from "@/components/ui/TiltFigure";
 
 /**
  * Visual presentation: product renders around a status card.
@@ -19,10 +19,7 @@ export function Showcase() {
         </div>
 
         <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-12 md:gap-5">
-          <figure className="relative overflow-hidden rounded-[10px] bg-[#15191b] md:col-span-5">
-            <img src={studio.src} alt={studio.alt} width={1200} height={1500} loading="lazy" decoding="async" className="h-full w-full object-cover md:min-h-[640px]" />
-            <figcaption className="absolute bottom-4 left-5 text-[13px] text-[#cfd2cf]">{studio.caption}</figcaption>
-          </figure>
+          <TiltFigure {...studio} width={1200} height={1820} className="aspect-[4/5] md:col-span-5 md:aspect-auto md:min-h-[640px]" />
 
           {/* Status card: the 3D object lands here */}
           <div className="relative flex flex-col rounded-[28px] bg-chalk text-ink shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)] md:col-span-4">
@@ -61,12 +58,9 @@ export function Showcase() {
             </div>
           </div>
 
-          <div className="grid gap-4 md:col-span-3 md:gap-5">
+          <div className="grid min-w-0 gap-4 md:col-span-3 md:gap-5">
             {[crown, top].map((im) => (
-              <figure key={im.src} className="relative overflow-hidden rounded-[10px] bg-[#15191b]">
-                <img src={im.src} alt={im.alt} width={800} height={800} loading="lazy" decoding="async" className="aspect-square h-full w-full object-cover" />
-                <figcaption className="absolute bottom-4 left-5 text-[13px] text-[#cfd2cf]">{im.caption}</figcaption>
-              </figure>
+              <TiltFigure key={im.src} {...im} width={1200} height={1200} className="aspect-square" />
             ))}
           </div>
         </div>

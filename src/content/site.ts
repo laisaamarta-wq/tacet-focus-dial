@@ -134,7 +134,7 @@ export const showcase = {
   images: [
     { src: "/renders/studio.webp", alt: "TACET One in Basalt finish on a dark studio surface, core glowing blue", caption: "TACET One in Basalt" },
     { src: "/renders/crown.webp", alt: "Close-up of the knurled brass crown on the Moss finish", caption: "Moss, with a brass crown" },
-    { src: "/renders/top.webp", alt: "TACET One in Fog finish seen from above, concentric rings around a glowing core", caption: "Fog, from above" },
+    { src: "/renders/top.webp", alt: "TACET One in Fog finish seen from a raised three-quarter angle, glass dome over a glowing core", caption: "Fog, at three-quarters" },
   ],
   card: {
     app: "Team status",
