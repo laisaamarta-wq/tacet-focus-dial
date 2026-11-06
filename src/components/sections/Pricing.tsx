@@ -18,7 +18,7 @@ export function Pricing() {
   };
 
   return (
-    <section id="pricing" data-stage="pricing" aria-labelledby="pricing-title" className="relative py-[clamp(6rem,14vh,11rem)]">
+    <section id="pricing" data-stage="pricing" aria-labelledby="pricing-title" className="relative py-[clamp(3.5rem,8vh,5rem)] md:py-[clamp(6rem,14vh,11rem)]">
       <div className="container-x relative z-20">
         <div className="grid gap-6 md:grid-cols-12 md:items-end">
           <SplitReveal id="pricing-title" text={pricing.title} className="text-sheen t-h2 md:col-span-7" />

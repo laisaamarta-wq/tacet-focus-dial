@@ -10,7 +10,7 @@ const ease = [0.16, 1, 0.3, 1] as const;
 /** Why it costs what it costs: six concrete reasons, each a number you can check. */
 export function Value() {
   return (
-    <section id="value" data-stage="value" aria-labelledby="value-title" className="relative py-[clamp(6rem,14vh,11rem)]">
+    <section id="value" data-stage="value" aria-labelledby="value-title" className="relative py-[clamp(3.5rem,8vh,5rem)] md:py-[clamp(6rem,14vh,11rem)]">
       <div className="container-x relative z-20 grid grid-cols-1 gap-10 md:grid-cols-12">
         <div className="md:col-span-5">
           <div className="md:sticky md:top-[14vh]">

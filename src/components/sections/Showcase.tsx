@@ -11,7 +11,7 @@ export function Showcase() {
   const [studio, crown, top] = showcase.images;
   const c = showcase.card;
   return (
-    <section id="showcase" data-stage="showcase" aria-labelledby="showcase-title" className="relative py-[clamp(6rem,14vh,11rem)]">
+    <section id="showcase" data-stage="showcase" aria-labelledby="showcase-title" className="relative py-[clamp(3.5rem,8vh,5rem)] md:py-[clamp(6rem,14vh,11rem)]">
       <div className="container-x relative">
         <div className="relative z-20 grid gap-6 md:grid-cols-12 md:items-end">
           <SplitReveal id="showcase-title" text={showcase.title} className="text-sheen t-h2 md:col-span-7" />

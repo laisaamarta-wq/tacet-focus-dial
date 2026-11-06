@@ -123,7 +123,7 @@ export function Specs() {
   }, [finish]);
 
   return (
-    <section id="specs" data-stage="specs" aria-labelledby="specs-title" className="relative py-[clamp(6rem,14vh,11rem)]">
+    <section id="specs" data-stage="specs" aria-labelledby="specs-title" className="relative py-[clamp(3.5rem,8vh,5rem)] md:py-[clamp(6rem,14vh,11rem)]">
       <div className="container-x relative z-20 grid grid-cols-1 items-start gap-x-10 gap-y-6 md:grid-cols-12 md:gap-y-0">
         <div className="md:col-span-5 md:col-start-8 md:row-start-1">
           <SplitReveal id="specs-title" text={tryIt.title} className="text-sheen t-h2" />

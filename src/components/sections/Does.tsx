@@ -41,7 +41,7 @@ function Icon({ i }: { i: number }) {
 
 export function Does() {
   return (
-    <section id="does" data-stage="does" aria-labelledby="does-title" className="relative py-[clamp(6rem,14vh,11rem)]">
+    <section id="does" data-stage="does" aria-labelledby="does-title" className="relative py-[clamp(3.5rem,8vh,5rem)] md:py-[clamp(6rem,14vh,11rem)]">
       <div className="container-x relative z-20">
         <div className="grid gap-6 md:grid-cols-12 md:items-end">
           <SplitReveal id="does-title" text={does.title} className="text-sheen t-h2 md:col-span-7" />

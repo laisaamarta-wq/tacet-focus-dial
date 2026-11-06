@@ -21,7 +21,7 @@ function Rating({ value }: { value: number }) {
 
 export function Testimonials() {
   return (
-    <section id="testimonials" data-stage="testimonials" aria-labelledby="t-title" className="relative pb-[clamp(3rem,8vh,6rem)] pt-[clamp(6rem,14vh,11rem)]">
+    <section id="testimonials" data-stage="testimonials" aria-labelledby="t-title" className="relative pb-[clamp(3rem,8vh,6rem)] pt-[clamp(3.5rem,8vh,5rem)] md:pt-[clamp(6rem,14vh,11rem)]">
       <div className="container-x relative z-20">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SplitReveal id="t-title" text={testimonials.title} className="text-sheen t-h2" />

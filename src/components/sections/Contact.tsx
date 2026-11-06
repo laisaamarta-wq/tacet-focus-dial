@@ -72,7 +72,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" data-stage="contact" aria-labelledby="contact-title" className="relative pb-16 pt-[clamp(6rem,14vh,11rem)]">
+    <section id="contact" data-stage="contact" aria-labelledby="contact-title" className="relative pb-16 pt-[clamp(3.5rem,8vh,5rem)] md:pt-[clamp(6rem,14vh,11rem)]">
       <div className="container-x relative z-20 grid grid-cols-1 gap-12 md:grid-cols-12">
         <div className="md:col-span-5">
           <SplitReveal id="contact-title" text={finalCta.title} className="text-sheen t-display text-[clamp(2.8rem,1.4rem+5.4vw,6.5rem)]" />

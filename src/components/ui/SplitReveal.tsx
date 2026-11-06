@@ -27,8 +27,12 @@ export function SplitReveal({
   const reduce = useReducedMotion();
   let n = 0;
   const words = text.split(" ");
+  // Safari stops painting a background-clip:text gradient on children that animate (transform/filter),
+  // so the sheen is applied to every character instead of the heading.
+  const sheen = /\btext-sheen\b/.test(className);
+  const tagClass = sheen ? className.replace(/\btext-sheen\b/, "").trim() : className;
   return (
-    <Tag id={id} className={className} aria-label={text}>
+    <Tag id={id} className={tagClass} aria-label={text}>
       {words.map((word, wi) => (
         <span key={wi} aria-hidden className="inline-block whitespace-nowrap">
           {word.split("").map((ch, ci) => {
@@ -36,7 +40,7 @@ export function SplitReveal({
             return (
               <motion.span
                 key={ci}
-                className="inline-block"
+                className={sheen ? "text-sheen inline-block" : "inline-block"}
                 initial={reduce ? false : { opacity: 0, y: "0.35em", filter: "blur(10px)" }}
                 whileInView={{ opacity: 1, y: "0em", filter: "blur(0px)" }}
                 viewport={{ once: true, amount: 0.6 }}

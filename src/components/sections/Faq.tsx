@@ -9,7 +9,7 @@ export function Faq() {
   const uid = useId();
 
   return (
-    <section id="faq" data-stage="faq" aria-labelledby="faq-title" className="relative py-[clamp(6rem,14vh,11rem)]">
+    <section id="faq" data-stage="faq" aria-labelledby="faq-title" className="relative py-[clamp(3.5rem,8vh,5rem)] md:py-[clamp(6rem,14vh,11rem)]">
       <div className="container-x relative z-20 grid grid-cols-1 gap-10 md:grid-cols-12">
         <SplitReveal id="faq-title" text={faq.title} className="text-sheen t-h2 md:col-span-4" />
         <ul className="border-t hairline md:col-span-7 md:col-start-6">
