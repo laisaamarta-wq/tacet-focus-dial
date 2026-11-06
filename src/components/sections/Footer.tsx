@@ -101,8 +101,8 @@ export function Footer() {
       </div>
 
       <div aria-hidden className="pointer-events-none mt-16 select-none overflow-hidden">
-        <div className="container-x flex items-end gap-[2vw] opacity-[0.09]">
-          <p className="font-display text-[clamp(5rem,-1rem+22vw,22rem)] font-[250] leading-[0.78] tracking-[0.02em]">{brand.name}</p>
+        <div className="container-x flex items-end justify-center gap-[2vw] opacity-[0.09] md:justify-start">
+          <p className="font-display text-[22.5vw] font-[250] leading-[0.78] tracking-[0.02em] md:text-[clamp(5rem,-1rem+22vw,22rem)]">{brand.name}</p>
         </div>
       </div>
 
